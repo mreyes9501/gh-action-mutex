@@ -17,6 +17,7 @@ __mutex_queue_file=mutex_queue
 __repo_url="https://x-access-token:$ARG_REPO_TOKEN@$ARG_GITHUB_SERVER/$ARG_REPOSITORY"
 __ticket_id="$GITHUB_RUN_ID-$(date +%s)-$(( $RANDOM % 1000 ))-$ARG_TICKET_ID_SUFFIX"
 echo "ticket_id=$__ticket_id" >> $GITHUB_STATE
+echo $__ticket_id > ticket_id.txt
 
 set_up_repo "$__repo_url"
 enqueue $ARG_BRANCH $__mutex_queue_file $__ticket_id
