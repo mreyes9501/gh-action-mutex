@@ -14,6 +14,9 @@ cd "$ARG_CHECKOUT_LOCATION"
 __mutex_queue_file=mutex_queue
 __repo_url="https://x-access-token:$ARG_REPO_TOKEN@$ARG_GITHUB_SERVER/$ARG_REPOSITORY"
 __ticket_id="${ARG_TICKET_ID:-$STATE_ticket_id}"
+echo "ARG_TICKET_ID=$ARG_TICKET_ID"
+echo "STATE_ticket_id=$STATE_ticket_id"
+echo "Using ticket_id=$__ticket_id"
 
 set_up_repo "$__repo_url"
 dequeue $ARG_BRANCH $__mutex_queue_file $__ticket_id
