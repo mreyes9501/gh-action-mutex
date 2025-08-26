@@ -33,7 +33,7 @@ inputs:
     description: 'Ticket id suffix to avoid identical values for parallel/matrix jobs in the same workflow run'
     required: false
     default: 'default'
-  ticket_id:
+  ticket-id:
     description: 'The ticket id to unlock'
     required: false
     default: ''  
@@ -48,6 +48,6 @@ runs:
     ARG_REPO_TOKEN: ${{ inputs.repo-token }}
     ARG_DEBUG: ${{ inputs.debug }}
     ARG_TICKET_ID_SUFFIX: ${{ inputs.ticket-id-suffix}}
-    ARG_TICKET_ID: ${{ inputs.ticket_id }}
+    ARG_TICKET_ID: ${{ inputs.ticket-id }}
   entrypoint: '/scripts/unlock.sh'
 
